@@ -63,16 +63,7 @@
             <span class="nav-link-text">Example Pages</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="login.jsp">Login Page</a>
-            </li>
-            <li>
-              <a href="register.jsp">Registration Page</a>
-            </li>
-            <li>
-              <a href="forgot-password.jsp">Forgot Password Page</a>
-            </li>
-            <li>
+           <li>
               <a href="blank.jsp">Blank Page</a>
             </li>
           </ul>

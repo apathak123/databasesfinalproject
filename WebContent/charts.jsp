@@ -31,16 +31,16 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="tables.jsp">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Tables</span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.jsp">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Charts</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.jsp">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -63,15 +63,6 @@
             <span class="nav-link-text">Example Pages</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="login.jsp">Login Page</a>
-            </li>
-            <li>
-              <a href="register.jsp">Registration Page</a>
-            </li>
-            <li>
-              <a href="forgot-password.jsp">Forgot Password Page</a>
-            </li>
             <li>
               <a href="blank.jsp">Blank Page</a>
             </li>
