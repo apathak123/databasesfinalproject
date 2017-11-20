@@ -261,7 +261,7 @@
 			if (con != null)
 			out.print(" connection made to database! <br/>");
 			else 
-				out.print("connection wasnt made :( <br/>");
+				out.print("connection with the database wasn't made :( <br/>");
 			//Create a SQL statement
 			Statement stmt = con.createStatement();
 			//Get the selected button from above 
