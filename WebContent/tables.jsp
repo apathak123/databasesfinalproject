@@ -276,7 +276,6 @@
 			//Make an HTML table to show the results in:
 				%>
 			
-      <!-- end added by harsh -->
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
@@ -484,6 +483,7 @@
 			out.print("an error occured");
 		}
       %>
+      <!-- end added by harsh -->
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
