@@ -253,18 +253,15 @@
      <input type="submit" name="submit" value="Select Table"/>
     </form>
 
-		<% 
-     	out.print("the output is");
-     	out.print(request.getParameter("disptable"));
-        out.print("end output");    		  
+		<% 		  
      try{
     	//Get the database connection
 			ApplicationDB db = new ApplicationDB();	
 			Connection con = db.getConnection();
 			if (con != null)
-			out.print(" connection made! ");
+			out.print(" connection made to database! <br/>");
 			else 
-				out.print("connection wasnt made :(");
+				out.print("connection wasnt made :( <br/>");
 			//Create a SQL statement
 			Statement stmt = con.createStatement();
 			//Get the selected button from above 
@@ -274,7 +271,7 @@
 			//Make a SELECT query from the table specified by the 'command' parameter at the index.jsp
 			String str = "SELECT * FROM " + entity;
 			//Run the query against the database.
-			out.print(str);
+			out.print("query being run: <br/>"+str);
 			ResultSet result = stmt.executeQuery(str);
 			//Make an HTML table to show the results in:
 				%>
@@ -344,7 +341,7 @@
    		else if (entity.equals("Barreviewers")){
    		%>
    		<thead>
-   		<tr><td>name</td><td>number_of_reviews_written</td><td>reputation score</td>
+   		<tr><td>name</td><td>number_of_reviews_written</td><td>reputation score</td></tr>
    		</thead>
    		<tbody>
    		<%while(result.next()){ %>
@@ -359,7 +356,7 @@
    		else if (entity.equals("Barreviews")){
    		%>
    		<thead>
-   		<tr><td>review_index</td><td>reviewer_name</td><td>reviewer_reputation</td><td>bar_name</td><td>review_score</td>
+   		<tr><td>review_index</td><td>reviewer_name</td><td>reviewer_reputation</td><td>bar_name</td><td>review_score</td></tr>
    		</thead>
    		<tbody>
    		<%while(result.next()){ %>
@@ -376,7 +373,7 @@
    		else if (entity.equals("Beer")){
    		%>
    		<thead>
-   		<tr><td>beer_name</td><td>manufactures</td><td>price_per_beer</td>
+   		<tr><td>beer_name</td><td>manufactures</td><td>price_per_beer</td></tr>
    		</thead>
    		<tbody>
    		<%while(result.next()){ %>
@@ -387,9 +384,92 @@
    		</tr>
    		<%} %>
    		</tbody>
+   		   	<%}
+   		else if (entity.equals("Drinker")){
+   		%>
+   		<thead>
+   		<tr><td>number</td><td>gender</td><td>name_set</td><td>given_name</td><td>middle_initial</td><td>surname</td><td>street_address</td><td>city</td><td>state</td>
+   		<td>state_full</td><td>zipcode</td><td>country_full</td><td>email_address</td><td>telephone_number</td><td>birthday</td><td>age</td><td>national_ID</td><td>occupation</td><td>company</td><td>pounds</td>
+   		</tr>
+   		</thead>
+   		<tbody>
+   		<%while(result.next()){ %>
+   		<tr>
+   		<td><%out.print(result.getString("number")); %></td>
+   		<td><%out.print(result.getString("gender")); %></td>
+   		<td><%out.print(result.getString("name_set")); %></td>
+   		<td><%out.print(result.getString("given_name")); %></td>
+   		<td><%out.print(result.getString("middle_initial")); %></td>
+   		<td><%out.print(result.getString("surname")); %></td>
+   		<td><%out.print(result.getString("street_address")); %></td>
+   		<td><%out.print(result.getString("city")); %></td>
+   		<td><%out.print(result.getString("state")); %></td>
+   		<td><%out.print(result.getString("state_full")); %></td>
+   		<td><%out.print(result.getString("zipcode")); %></td>
+   		<td><%out.print(result.getString("country_full")); %></td>
+   		<td><%out.print(result.getString("email_address")); %></td>
+   		<td><%out.print(result.getString("telephone_number")); %></td>
+   		<td><%out.print(result.getString("birthday")); %></td>
+   		<td><%out.print(result.getString("age")); %></td>
+   		<td><%out.print(result.getString("national_ID")); %></td>
+   		<td><%out.print(result.getString("occupation")); %></td>
+   		<td><%out.print(result.getString("company")); %></td>
+   		<td><%out.print(result.getString("pounds")); %></td>
+   		</tr>
+   		<%} %>
+   		</tbody>
+   		     <%}
+   		else if (entity.equals("Frequents")){
+   		%>
+   		<thead>
+   		<tr><td>given_name</td><td>middle_initial</td><td>surname</td><td>drinker_state</td><td>bar_name</td><td>bar_state</td></tr>
+   		</thead>
+   		<tbody>
+   		<%while(result.next()){ %>
+   		<tr>
+   		<td><%out.print(result.getString("given_name")); %></td>
+   		<td><%out.print(result.getString("middle_initial")); %></td>
+   		<td><%out.print(result.getString("surname")); %></td>
+   		<td><%out.print(result.getString("drinker_state")); %></td>
+   		<td><%out.print(result.getString("bar_name")); %></td>
+   		<td><%out.print(result.getString("bar_state")); %></td>
+   		</tr>
+   		<%} %>
+   		</tbody>
+   		     <%}
+   		else if (entity.equals("Likes")){
+   		%>
+   		<thead>
+   		<tr><td>given_name</td><td>surname</td><td>beer_name</td></tr>
+   		</thead>
+   		<tbody>
+   		<%while(result.next()){ %>
+   		<tr>
+   		<td><%out.print(result.getString("given_name")); %></td>
+   		<td><%out.print(result.getString("surname")); %></td>
+   		<td><%out.print(result.getString("beer_name")); %></td>
+   		</tr>
+   		<%} %>
+   		</tbody>
+   		     <%}
+   		else if (entity.equals("Numberofbeerstillbloodalcohollevel")){
+   		%>
+   		<thead>
+   		<tr><td>gender</td><td>weight</td><td>number_of_beers_to_have</td><td>number_of_beers_rounded</td></tr>
+   		</thead>
+   		<tbody>
+   		<%while(result.next()){ %>
+   		<tr>
+   		<td><%out.print(result.getString("gender")); %></td>
+   		<td><%out.print(result.getString("weight")); %></td>
+   		<td><%out.print(result.getString("number_of_beers_to_have")); %></td>
+   		<td><%out.print(result.getString("number_of_beers_rounded")); %></td>
+   		</tr>
+   		<%} %>
+   		</tbody>
        <%}
    		else
-   			out.print("nothing");
+   			out.print("no table was selected");
    		%>
             </table>
           </div>
