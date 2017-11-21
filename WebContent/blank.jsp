@@ -6,7 +6,6 @@
 <!-- end added by harsh -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -237,9 +236,12 @@
       <div class="row">
         <div class="col-12">
  <!-- added by harsh -->
-          want to see the top 5 ranked bars by reviews that you frequent?<br/>
+
+<h3>Query 1</h3>
+want to see the top 5 ranked bars by reviews that you frequent?<br/>
           enter in the following information!<br/>
       (use joel G Alvarado)<br/>
+
 <form name="f1" method="get" action="#">
   First name:<br>
   <input type="text" name="given_name"><br>
@@ -296,7 +298,75 @@
 			out.print("an error occured");
 		}
       %>
-          
+
+<h4>End Of Query 1</h4>
+
+<h3>Query 2</h3>
+want to see the top 5 ranked bars by reviews in your state that you dont frequent?<br/>
+          enter in the following information!<br/>
+      (use joel G Alvarado)<br/>
+
+<form name="f2" method="get" action="#">
+  First name:<br>
+  <input type="text" name="given_name"><br>
+  Middle name:<br>
+  <input type="text" name="middle_initial"><br>
+  Last name:<br>
+  <input type="text" name="surname2"><br>
+  <input type="submit" value="Submit">
+</form> 
+     <% String given_name2=request.getParameter("given_name2");
+     String middle_initial2=request.getParameter("middle_initial2");
+     String surname2=request.getParameter("surname2");
+     out.print(given_name2+" "+middle_initial2+" "+surname2); %>     
+          	<% 		  
+     try{
+    	//Get the database connection
+			ApplicationDB db = new ApplicationDB();	
+			Connection con = db.getConnection();
+			Statement stmt = con.createStatement();
+			if (given_name2!=null)
+			{
+			String str = "select rank,name,number_of_reviews, score, state from (select * from Barranks b1 , Bar bar1 where not exists (select * from Frequents f1 where f1.given_name=\""+given_name2+"\" and f1.middle_initial=\""+middle_initial2+"\" and f1.surname=\""+surname2+"\" and f1.bar_name=b1.name) and b1.name=bar1.bar_name) as barslinked where exists(select * from Frequents f2 where f2.given_name=\""+given_name2+"\" and f2.middle_initial=\""+middle_initial2+"\" and f2.surname=\""+surname2+"\"and f2.drinker_state=barslinked.state) order by rank ASC limit 5";
+			//Run the query against the database.
+			out.print("query being run: <br/>"+str);
+			ResultSet result = stmt.executeQuery(str);
+			//Make an HTML table to show the results in:
+			%>
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<thead>
+			<tr><td>rank</td><td>name</td><td>number_of_reviews</td><td>score</td><td>state</td></tr>
+			</thead>
+			<tbody>
+		<% while (result.next()) 
+		{%>
+			<tr>
+			<td><%out.print(result.getString("rank")); %></td>
+			<td><%out.print(result.getString("name")); %></td>
+			<td><%out.print(result.getString("number_of_reviews")); %></td>
+			<td><%out.print(result.getString("score")); %></td>
+			<td><%out.print(result.getString("state")); %></td>
+			</tr>
+		
+		<%}%>
+		</tbody>
+		</table>
+			<%}
+			else out.print("names were null! no table compiled");
+				%>
+		<% 			//close the connection.
+		db.closeConnection(con);
+     }catch (Exception e) {
+			out.print(e);
+			out.print("an error occured");
+		}
+      %>
+
+<h4>End Of Query 2</h4>
+
+
+
+
         </div>
       </div>
     </div>
