@@ -168,21 +168,39 @@ want to know people in your state that dont frequent your bar?<br/>
 			ResultSet result = stmt.executeQuery(str);
 			//Make an HTML table to show the results in:
 			%>
+			<div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 			<thead>
-			<tr><td>beer_name</td><td>price_per_beer</td></tr>
+			<tr><td>given_name</td><td>middle_initial</td><td>surname</td><td>street_address</td><td>city</td><td>state</td><td>zipcode</td><td>email_address</td><td>telephone_number</td></tr>
 			</thead>
 			<tbody>
 		<% while (result.next()) 
 		{%>
 			<tr>
-			<td><%out.print(result.getString("beer_name")); %></td>
-			<td><%out.print(result.getString("price_per_beer")); %></td>
+			<td><%out.print(result.getString("given_name")); %></td>
+			<td><%out.print(result.getString("middle_initial")); %></td>
+			<td><%out.print(result.getString("surname")); %></td>
+			<td><%out.print(result.getString("street_address")); %></td>
+			<td><%out.print(result.getString("city")); %></td>
+			<td><%out.print(result.getString("state")); %></td>
+			<td><%out.print(result.getString("zipcode")); %></td>
+			<td><%out.print(result.getString("email_address")); %></td>
+			<td><%out.print(result.getString("telephone_number")); %></td>
 			</tr>
 		
 		<%}%>
 		</tbody>
 		</table>
+		
+		 </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
 			<%}
 			else out.print("names were null! no table compiled");
 				%>

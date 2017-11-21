@@ -143,18 +143,21 @@
  <!-- added by harsh -->
 
 <h3>Query 3</h3>
-want to know the cheapest beers from beers you like and places you frequent?<br/>
+want to know the cheapest beers from places you frequent?<br/>
           enter in the following information!<br/>
-      (use Jessica Martinez)<br/>
+      (use joel G Alvarado)<br/>
 
 <form name="f3" method="get" action="#">
   First name:<br>
   <input type="text" name="given_name"><br>
+  Middle initial:<br>
+  <input type="text" name="middle_initial"><br>
   Last name:<br>
   <input type="text" name="surname"><br>
   <input type="submit" value="Submit">
 </form> 
      <% String given_name3=request.getParameter("given_name");
+     String middle_initial3=request.getParameter("middle_initial");
      String surname3=request.getParameter("surname");
      out.print(given_name3+" "+surname3); %>     
           	<% 		  
@@ -165,7 +168,7 @@ want to know the cheapest beers from beers you like and places you frequent?<br/
 			Statement stmt = con.createStatement();
 			if (given_name3!=null)
 			{
-			String str = "SELECT Sells.beer_name, Sells.price_per_beer FROM Sells WHERE EXISTS( SELECT * FROM Likes WHERE Likes.given_name = \""+given_name3+"\" AND Likes.surname = \""+surname3+"\"AND Likes.beer_name = Sells.beer_name)ORDER BY Sells.price_per_beer ASC";
+			String str = "Select distinct Sells.beer_name,Frequents.bar_name,Sells.price_per_beer from Likes,Sells,Frequents WHERE Frequents.given_name='"+given_name3+"' and Frequents.middle_initial='"+middle_initial3+"' and Frequents.surname='"+surname3+"' AND (Sells.bar_name = Frequents.bar_name) ORDER BY Sells.price_per_beer ASC Limit 10";
 			//Run the query against the database.
 			out.print("query being run: <br/>"+str);
 			ResultSet result = stmt.executeQuery(str);
@@ -173,13 +176,14 @@ want to know the cheapest beers from beers you like and places you frequent?<br/
 			%>
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 			<thead>
-			<tr><td>beer_name</td><td>price_per_beer</td></tr>
+			<tr><td>beer_name</td><td>bar_name</td><td>price_per_beer</td></tr>
 			</thead>
 			<tbody>
 		<% while (result.next()) 
 		{%>
 			<tr>
 			<td><%out.print(result.getString("beer_name")); %></td>
+			<td><%out.print(result.getString("bar_name")); %></td>
 			<td><%out.print(result.getString("price_per_beer")); %></td>
 			</tr>
 		
