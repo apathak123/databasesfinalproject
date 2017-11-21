@@ -65,10 +65,10 @@
 				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
 					<li><a href="barquery1.jsp">Bar Owner Query 1</a></li>
 					<li><a href="barquery2.jsp">Bar Owner Query 2</a></li>
-					<li><a href="barquery2.jsp">Bar Owner Query 2</a></li>
-					<li><a href="customerquery2.jsp">Customer Query 1</a></li>
+					<li><a href="barquery3.jsp">Bar Owner Query 3</a></li>
+					<li><a href="customerquery1.jsp">Customer Query 1</a></li>
 					<li><a href="customerquery2.jsp">Customer Query 2</a></li>
-					<li><a href="customerquery2.jsp">Customer Query 3</a></li>
+					<li><a href="customerquery3.jsp">Customer Query 3</a></li>
 				</ul></li>
 	
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
