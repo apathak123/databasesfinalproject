@@ -1,9 +1,3 @@
-<!-- added by harsh -->
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
-<%@ page import="java.io.*,java.util.*,java.sql.*"%>
-<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
-<!-- end added by harsh -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -236,67 +230,8 @@
       </ol>
       <div class="row">
         <div class="col-12">
- <!-- added by harsh -->
-          want to see the top 5 ranked bars by reviews that you frequent?<br/>
-          enter in the following information!<br/>
-      (use joel G Alvarado)<br/>
-<form name="f1" method="get" action="#">
-  First name:<br>
-  <input type="text" name="given_name"><br>
-  Middle name:<br>
-  <input type="text" name="middle_initial"><br>
-  Last name:<br>
-  <input type="text" name="surname"><br>
-  <input type="submit" value="Submit">
-</form> 
-     <% String given_name=request.getParameter("given_name");
-     String middle_initial=request.getParameter("middle_initial");
-     String surname=request.getParameter("surname");
-     out.print(given_name+" "+middle_initial+" "+surname); %>     
-          	<% 		  
-     try{
-    	//Get the database connection
-			ApplicationDB db = new ApplicationDB();	
-			Connection con = db.getConnection();
-			Statement stmt = con.createStatement();
-			if (given_name!=null)
-			{
-			String str = "select Barranks.rank,Barranks.name,Barranks.number_of_reviews,Barranks.average_reviewer_reputation,Barranks.average_review, Barranks.score from Frequents, Barranks where Frequents.given_name=\""+given_name+"\" and Frequents.middle_initial=\""+middle_initial+"\" and Frequents.surname=\""+surname+"\" and Frequents.bar_name=Barranks.name order by Barranks.rank ASC limit 5";
-			//Run the query against the database.
-			out.print("query being run: <br/>"+str);
-			ResultSet result = stmt.executeQuery(str);
-			//Make an HTML table to show the results in:
-			%>
-			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-			<thead>
-			<tr><td>rank</td><td>name</td><td>number_of_reviews</td><td>average_reviewer_reputation</td><td>average_review</td><td>score</td></tr>
-			</thead>
-			<tbody>
-		<% while (result.next()) 
-		{%>
-			<tr>
-			<td><%out.print(result.getString("rank")); %></td>
-			<td><%out.print(result.getString("name")); %></td>
-			<td><%out.print(result.getString("number_of_reviews")); %></td>
-			<td><%out.print(result.getString("average_reviewer_reputation")); %></td>
-			<td><%out.print(result.getString("average_review")); %></td>
-			<td><%out.print(result.getString("score")); %></td>
-			</tr>
-		
-		<%}%>
-		</tbody>
-		</table>
-			<%}
-			else out.print("names were null! no table compiled");
-				%>
-		<% 			//close the connection.
-		db.closeConnection(con);
-     }catch (Exception e) {
-			out.print(e);
-			out.print("an error occured");
-		}
-      %>
-          
+          <h1>Blank</h1>
+          <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p>
         </div>
       </div>
     </div>
