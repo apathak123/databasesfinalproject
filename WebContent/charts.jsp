@@ -1,3 +1,9 @@
+<!-- added by harsh -->
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+<!-- end added by harsh -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -219,6 +225,78 @@
         </li>
         <li class="breadcrumb-item active">Charts</li>
       </ol>
+      patterns to display: <br/>
+      Frequents table pattern: <br/>
+      all drinker states should be the same as the bar states<br/>
+      
+      <% 		  
+     try{
+    	//Get the database connection
+			ApplicationDB db = new ApplicationDB();	
+			Connection con = db.getConnection();
+			if (con != null)
+			out.print(" connection made to database! <br/>");
+			else 
+				out.print("connection with the database wasn't made :( <br/>");
+			//Create a SQL statement
+			Statement stmt = con.createStatement();
+			//Make a SELECT query from the table specified by the 'command' parameter at the index.jsp
+			String str = "select count(given_name) as tuples from Frequents where drinker_state<>bar_state; ";
+			//Run the query against the database.
+			out.print("Query being run: "+str+"<br/>");
+			ResultSet result = stmt.executeQuery(str);
+			//Make an HTML table to show the results in:
+				result.next();
+				out.print("result is: "+result.getString("tuples")+"<br/>");
+
+			if (Integer.parseInt(result.getString("tuples"))==0)
+				out.print("there are no tuples where drinker_state is different than the bar_state");
+			else 
+				out.print("there were tuples where the drinker state was different than the bar state ");
+				%>
+      <% 			//close the connection.
+		db.closeConnection(con);
+     }catch (Exception e) {
+			out.print(e);
+			out.print("an error occured");
+		}
+      %>
+      
+      <br/> Bar table pattern: <br/>
+      All bars sell their beers for more than the manufacturing price<br/>
+      <% 		  
+     try{
+    	//Get the database connection
+			ApplicationDB db = new ApplicationDB();	
+			Connection con = db.getConnection();
+			if (con != null)
+			out.print(" connection made to database! <br/>");
+			else 
+				out.print("connection with the database wasn't made :( <br/>");
+			//Create a SQL statement
+			Statement stmt = con.createStatement();
+			//Make a SELECT query from the table specified by the 'command' parameter at the index.jsp
+			String str = "SELECT count(s1.beer_name) as tuples FROM Beer b1, Sells s1 WHERE s1.beer_name=b1.beer_name and s1.price_per_beer<=b1.price_per_beer;";
+			//Run the query against the database.
+			out.print("Query being run: "+str+"<br/>");
+			ResultSet result = stmt.executeQuery(str);
+			//Make an HTML table to show the results in:
+				result.next();
+				out.print("result is: "+result.getString("tuples")+"<br/>");
+
+			if (Integer.parseInt(result.getString("tuples"))==0)
+				out.print("there are no tuples where bar price was less than or equal to manufacture price");
+			else 
+				out.print("there were tuples where tuples where bar price was less than or equal to manufacture price");
+				%>
+      <% 			//close the connection.
+		db.closeConnection(con);
+     }catch (Exception e) {
+			out.print(e);
+			out.print("an error occured");
+		}
+      %>
+      
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">

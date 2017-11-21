@@ -240,6 +240,7 @@
            <option>Frequents</option>
            <option>Likes</option>
            <option>Numberofbeerstillbloodalcohollevel</option>
+           <option>Sells</option>
        </select>
      <input type="submit" name="submit" value="Select Table"/>
     </form>
@@ -454,6 +455,21 @@
    		<td><%out.print(result.getString("weight")); %></td>
    		<td><%out.print(result.getString("number_of_beers_to_have")); %></td>
    		<td><%out.print(result.getString("number_of_beers_rounded")); %></td>
+   		</tr>
+   		<%} %>
+   		</tbody>
+   			<%}
+   		else if (entity.equals("Sells")){
+   		%>
+   		<thead>
+   		<tr><td>bar_name</td><td>beer_name</td><td>price_per_beer</td></tr>
+   		</thead>
+   		<tbody>
+   		<%while(result.next()){ %>
+   		<tr>
+   		<td><%out.print(result.getString("bar_name")); %></td>
+   		<td><%out.print(result.getString("beer_name")); %></td>
+   		<td><%out.print(result.getString("price_per_beer")); %></td>
    		</tr>
    		<%} %>
    		</tbody>
