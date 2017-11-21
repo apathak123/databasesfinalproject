@@ -60,6 +60,21 @@
 				title="Example Pages"><a
 				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
 				href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
+					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Bar Queries</span>
+			</a>
+				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
+					<li><a href="barquery1.jsp">Bar Owner Query 1</a></li>
+					<li><a href="barquery2.jsp">Bar Owner Query 2</a></li>
+					<li><a href="barquery2.jsp">Bar Owner Query 2</a></li>
+					<li><a href="customerquery2.jsp">Customer Query 1</a></li>
+					<li><a href="customerquery2.jsp">Customer Query 2</a></li>
+					<li><a href="customerquery2.jsp">Customer Query 3</a></li>
+				</ul></li>
+	
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Example Pages"><a
+				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+				href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
 					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Example
 						Pages</span>
 			</a>
