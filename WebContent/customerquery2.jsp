@@ -147,6 +147,7 @@ want to see the top 5 ranked bars by reviews in your state that you dont frequen
           enter in the following information!<br/>
       (use joel G Alvarado)<br/>
 
+<p>query might take up to a minute to retrieve after pressing submit button. Please wait patiently</p>
 <form name="f2" method="get" action="#">
   First name:<br>
   <input type="text" name="given_name"><br>
