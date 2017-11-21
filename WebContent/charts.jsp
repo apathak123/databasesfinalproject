@@ -103,19 +103,6 @@
 		</div>
 	</nav>
 
-	<div>
-		<a
-			href="https://plot.ly/~AkankshaPathak/1/?share_key=00ONyQfeVWCLkNuV9CSOiS"
-			target="_blank" title="Plot 1"
-			style="display: block; text-align: center;"><img
-			src="https://plot.ly/~AkankshaPathak/1.png?share_key=00ONyQfeVWCLkNuV9CSOiS"
-			alt="Plot 1" style="max-width: 100%; width: 600px;" width="600"
-			onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-		<script data-plotly="AkankshaPathak:1"
-			sharekey-plotly="00ONyQfeVWCLkNuV9CSOiS"
-			src="https://plot.ly/embed.js" async></script>
-	</div>
-
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<!-- Breadcrumbs-->
@@ -150,8 +137,27 @@
 		<!-- Custom scripts for this page-->
 		<script src="js/sb-admin-charts.min.js"></script>
 		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-	</div>
+		<div>
+			<a
+				href="https://plot.ly/~AkankshaPathak/4/?share_key=rxQuKWnZwvnErtqf28WrD2"
+				target="_blank" title="Beer Price"
+				style="display: block; text-align: center;"><img
+				src="https://plot.ly/~AkankshaPathak/4.png?share_key=rxQuKWnZwvnErtqf28WrD2"
+				alt="Beer Price" style="max-width: 100%; width: 600px;" width="600"
+				onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+			<script data-plotly="AkankshaPathak:4"
+				sharekey-plotly="rxQuKWnZwvnErtqf28WrD2"
+				src="https://plot.ly/embed.js" async></script>
+			<a
+				href="https://plot.ly/~AkankshaPathak/1/?share_key=00ONyQfeVWCLkNuV9CSOiS"
+				target="_blank" title="Plot 1"
+				style="display: block; text-align: center;"><img
+				src="https://plot.ly/~AkankshaPathak/1.png?share_key=00ONyQfeVWCLkNuV9CSOiS"
+				alt="Plot 1" style="max-width: 100%; width: 600px;" width="600"
+				onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+			<script data-plotly="AkankshaPathak:1"
+				sharekey-plotly="00ONyQfeVWCLkNuV9CSOiS"
+				src="https://plot.ly/embed.js" async></script>
+		</div>
 </body>
-
 </html>
