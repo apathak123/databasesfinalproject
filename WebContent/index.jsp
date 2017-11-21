@@ -60,7 +60,8 @@
 				title="Example Pages"><a
 				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
 				href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
-					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Bar Queries</span>
+					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Bar
+						Queries</span>
 			</a>
 				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
 					<li><a href="barquery1.jsp">Bar Owner Query 1</a></li>
@@ -70,7 +71,7 @@
 					<li><a href="customerquery2.jsp">Customer Query 2</a></li>
 					<li><a href="customerquery3.jsp">Customer Query 3</a></li>
 				</ul></li>
-	
+
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
 				title="Example Pages"><a
 				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
@@ -85,20 +86,13 @@
 				title="Menu Levels"><a
 				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
 				href="#collapseMulti" data-parent="#exampleAccordion"> <i
-					class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">Menu
-						Levels</span>
+					class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">Inserting
+						into Tables </span>
 			</a>
 				<ul class="sidenav-second-level collapse" id="collapseMulti">
-					<li><a href="#">Second Level Item</a></li>
-					<li><a href="#">Second Level Item</a></li>
-					<li><a href="#">Second Level Item</a></li>
-					<li><a class="nav-link-collapse collapsed"
-						data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-						<ul class="sidenav-third-level collapse" id="collapseMulti2">
-							<li><a href="#">Third Level Item</a></li>
-							<li><a href="#">Third Level Item</a></li>
-							<li><a href="#">Third Level Item</a></li>
-						</ul></li>
+					<li><a href="insertion1.jsp">Insertion 1</a></li>
+					<li><a href="insertion2.jsp">Insertion 2</a></li>
+					<li><a href="insertion3.jsp">Insertion 3</a></li>
 				</ul></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
 				title="Link"><a class="nav-link" href="#"> <i
