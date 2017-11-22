@@ -155,7 +155,7 @@
 			ApplicationDB db = new ApplicationDB();	
 			Connection con = db.getConnection();
 			Statement stmt = con.createStatement();
-			if (occupation!=null)
+			if (occupation!=null && average_salary!=null)
 			{
 			String str = "SELECT COUNT(*) as cnt FROM Averagesalaryperoccupation";
 			ResultSet result = stmt.executeQuery(str);
@@ -187,6 +187,7 @@
 			else 
 				out.print("insertion didn't succeed");
 			}
+			else out.print("one or more entries were null");
 				%>
 		<% 			//close the connection.
      }catch (Exception e) {
