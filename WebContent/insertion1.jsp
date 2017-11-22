@@ -137,18 +137,20 @@
  <!-- added by harsh -->
 
 <h3>insert into Averagesalaryperoccupation table </h3>
-
+<p> use occupation= 'student' to check insertion on an already existing item <br> </p>
 <form name="f8" method="get" action="#">
-  Occupation name:<br>
+  <h5>Occupation name:<br></h5>
+  (duplicate values will be stopped from inserting by constraints)<br>
   <input type="text" name="occupation"><br>
-  average salary<br>
+  <h5>average salary:<br></h5>
+  (salary under 0 will be stopped from inserting by constraints)<br>
   <input type="number" name="average_salary"><br>
   <input type="submit" value="Submit">
 </form> 
      <% 
      String occupation=request.getParameter("occupation");
      String average_salary=request.getParameter("average_salary");
-     out.print("to be inserted:"+ occupation+" "+ average_salary); %>     
+     out.print("to be inserted: "+ occupation+" "+ average_salary + "<br>"); %>     
           	<% 		  
      try{
     	//Get the database connection
@@ -157,8 +159,23 @@
 			Statement stmt = con.createStatement();
 			if (occupation!=null && average_salary!=null)
 			{
-			String str = "SELECT COUNT(*) as cnt FROM Averagesalaryperoccupation";
-			ResultSet result = stmt.executeQuery(str);
+				int average_salaryint=Integer.valueOf(average_salary);
+				String str = "SELECT COUNT(*) as cnt FROM Averagesalaryperoccupation where occupation='"+occupation+"' ";
+				ResultSet result = stmt.executeQuery(str);
+				result.next();
+				int occupationexists=result.getInt("cnt");	
+				if (occupationexists>=1)
+				{
+					out.print("occupation already exists. terminating insert<br>");
+				}
+				else if (average_salaryint<0)
+				{
+					out.print("average salary inserted is less than 0. insert terminated");
+				}
+				else 
+				{
+			 str = "SELECT COUNT(*) as cnt FROM Averagesalaryperoccupation";
+			 result = stmt.executeQuery(str);
 			result.next();
 			int countoccupations=result.getInt("cnt");
 			
@@ -169,7 +186,7 @@
 			PreparedStatement ps = con.prepareStatement(insert);
 
 			//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-			int average_salaryint=Integer.valueOf(average_salary);
+			
 			ps.setString(1, occupation);
 			ps.setInt(2, average_salaryint);
 			//Run the query against the DB
@@ -186,6 +203,7 @@
 				out.print("insert succeeded");
 			else 
 				out.print("insertion didn't succeed");
+				}
 			}
 			else out.print("one or more entries were null");
 				%>
@@ -195,8 +213,6 @@
 			out.print("insertion failed");
 		}
       %>
-
-<h4>End Of Query 1</h4>
 
         </div>
       </div>

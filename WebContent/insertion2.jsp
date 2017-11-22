@@ -137,13 +137,15 @@
  <!-- added by harsh -->
 
 <h3>insert into Beer table </h3>
-
+<p>(use BeerName= 'Aguila' and Manufactures= 'MillerCoors' if you want to insert an already existing primary key)<br>
+(duplicate values of primary keys Beername and Manufactures will be stopped from inserting by constraints)<br>
+</p>
 <form name="f9" method="get" action="#">
-  Beer name:<br>
+  <h5>Beer name:<br></h5>
   <input type="text" name="beer_name"><br>
-  manufactures:<br>
+  <h5>manufactures:<br></h5>
   <input type="text" name="manufactures"><br>
-  price_per_beer:<br>
+  <h5>price_per_beer:<br></h5>
   <input type="number" step="0.01" name="price_per_beer"><br>
   <input type="submit" value="Submit">
 </form> 
@@ -151,7 +153,7 @@
      String beer_name=request.getParameter("beer_name");
      String manufactures=request.getParameter("manufactures");
      String price_per_beer=request.getParameter("price_per_beer");
-     out.print("to be inserted:"+beer_name+" "+ manufactures+" "+ price_per_beer); %>     
+     out.print("to be inserted: "+beer_name+" "+ manufactures+" "+ price_per_beer+"<br>"); %>     
           	<% 		  
      try{
     	//Get the database connection
@@ -160,8 +162,17 @@
 			Statement stmt = con.createStatement();
 			if (beer_name!=null && manufactures!=null && price_per_beer!=null)
 			{
-			String str = "SELECT COUNT(*) as cnt FROM Beer";
-			ResultSet result = stmt.executeQuery(str);
+				String str = "SELECT COUNT(*) as cnt FROM Beer where beer_name='"+beer_name+"' and manufactures='"+manufactures+"'";
+				ResultSet result = stmt.executeQuery(str);
+				result.next();
+				int beerexists=result.getInt("cnt");
+				if (beerexists>0)
+				{
+					out.print("primary keys beer_name and manufactures already exist in the table. insertion terminated <br>");
+				}
+				else{
+			 str = "SELECT COUNT(*) as cnt FROM Beer";
+			 result = stmt.executeQuery(str);
 			result.next();
 			int countbeers=result.getInt("cnt");
 			
@@ -190,6 +201,7 @@
 				out.print("insert succeeded");
 			else 
 				out.print("insertion didn't succeed");
+				}
 			}
 			else out.print("one of the values was null. stopped insertion");
 				%>
@@ -200,7 +212,6 @@
 		}
       %>
 
-<h4>End Of Query 1</h4>
 
         </div>
       </div>
