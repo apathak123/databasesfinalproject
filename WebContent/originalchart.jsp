@@ -130,9 +130,9 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Charts</li>
+        <li class="breadcrumb-item active">Patterns</li>
       </ol>
-      patterns to display: <br/>
+      Patterns to display: <br/>
       Frequents table pattern: <br/>
       all drinker states should be the same as the bar states<br/>
       
@@ -204,33 +204,6 @@
 		}
       %>
       <!-- Area Chart Example-->
-      <script type="text/javascript">
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	theme: "light1", // "light2", "dark1", "dark2"
-	animationEnabled: false, // change to true		
-	title:{
-		text: "Basic Column Chart"
-	},
-	data: [
-	{
-		// Change type to "bar", "area", "spline", "pie",etc.
-		type: "column",
-		dataPoints: [
-			{ label: "apple",  y: 10  },
-			{ label: "orange", y: 15  },
-			{ label: "banana", y: 25  },
-			{ label: "mango",  y: 30  },
-			{ label: "grape",  y: 28  }
-		]
-	}
-	]
-});
-chart.render();
-
-}
-</script>
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-area-chart"></i> Area Chart Example</div>

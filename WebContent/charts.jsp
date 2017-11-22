@@ -27,80 +27,86 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-		id="mainNav">
-		<a class="navbar-brand" href="index.jsp">BarBeerDrinker+</a>
-		<button class="navbar-toggler navbar-toggler-right" type="button"
-			data-toggle="collapse" data-target="#navbarResponsive"
-			aria-controls="navbarResponsive" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Dashboard"><a class="nav-link" href="index.jsp"> <i
-						class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Dashboard</span>
-				</a></li>
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Tables"><a class="nav-link" href="tables.jsp"> <i
-						class="fa fa-fw fa-table"></i> <span class="nav-link-text">Tables</span>
-				</a></li>
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Charts"><a class="nav-link" href="charts.jsp"> <i
-						class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Charts</span>
-				</a></li>
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Components"><a
-					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-					href="#collapseComponents" data-parent="#exampleAccordion"> <i
-						class="fa fa-fw fa-wrench"></i> <span class="nav-link-text">Components</span>
-				</a>
-					<ul class="sidenav-second-level collapse" id="collapseComponents">
-						<li><a href="navbar.jsp">Navbar</a></li>
-						<li><a href="cards.jsp">Cards</a></li>
-					</ul></li>
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Example Pages"><a
-					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-					href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
-						class="fa fa-fw fa-file"></i> <span class="nav-link-text">Example
-							Pages</span>
-				</a>
-					<ul class="sidenav-second-level collapse" id="collapseExamplePages">
-						<li><a href="blank.jsp">Blank Page</a></li>
-					</ul></li>
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Menu Levels"><a
-					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-					href="#collapseMulti" data-parent="#exampleAccordion"> <i
-						class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">Menu
-							Levels</span>
-				</a>
-					<ul class="sidenav-second-level collapse" id="collapseMulti">
-						<li><a href="#">Second Level Item</a></li>
-						<li><a href="#">Second Level Item</a></li>
-						<li><a href="#">Second Level Item</a></li>
-						<li><a class="nav-link-collapse collapsed"
-							data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-							<ul class="sidenav-third-level collapse" id="collapseMulti2">
-								<li><a href="#">Third Level Item</a></li>
-								<li><a href="#">Third Level Item</a></li>
-								<li><a href="#">Third Level Item</a></li>
-							</ul></li>
-					</ul></li>
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Link"><a class="nav-link" href="#"> <i
-						class="fa fa-fw fa-link"></i> <span class="nav-link-text">Link</span>
-				</a></li>
-			</ul>
-			<ul class="navbar-nav sidenav-toggler">
-				<li class="nav-item"><a class="nav-link text-center"
-					id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
-				</a></li>
-			</ul>
-			<ul class="navbar-nav ml-auto">
-			</ul>
-		</div>
+		id="mainNav"> <a class="navbar-brand" href="index.jsp">BarBeerDrinker+</a>
+	<button class="navbar-toggler navbar-toggler-right" type="button"
+		data-toggle="collapse" data-target="#navbarResponsive"
+		aria-controls="navbarResponsive" aria-expanded="false"
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Dashboard"><a class="nav-link" href="index.jsp"> <i
+					class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Dashboard</span>
+			</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Tables"><a class="nav-link" href="tables.jsp"> <i
+					class="fa fa-fw fa-table"></i> <span class="nav-link-text">Tables</span>
+			</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Charts"><a class="nav-link" href="charts.jsp"> <i
+					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Charts</span>
+			</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Components"><a
+				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+				href="#collapseComponents" data-parent="#exampleAccordion"> <i
+					class="fa fa-fw fa-wrench"></i> <span class="nav-link-text">Components</span>
+			</a>
+				<ul class="sidenav-second-level collapse" id="collapseComponents">
+					<li><a href="navbar.jsp">Navbar</a></li>
+					<li><a href="cards.jsp">Cards</a></li>
+				</ul></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Example Pages"><a
+				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+				href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
+					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Bar
+						Queries</span>
+			</a>
+				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
+					<li><a href="barquery1.jsp">Bar Owner Query 1</a></li>
+					<li><a href="barquery2.jsp">Bar Owner Query 2</a></li>
+					<li><a href="barquery3.jsp">Bar Owner Query 3</a></li>
+					<li><a href="customerquery1.jsp">Customer Query 1</a></li>
+					<li><a href="customerquery2.jsp">Customer Query 2</a></li>
+					<li><a href="customerquery3.jsp">Customer Query 3</a></li>
+				</ul></li>
+
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Example Pages"><a
+				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+				href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
+					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Example
+						Pages</span>
+			</a>
+				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
+					<li><a href="blank.jsp">Blank Page</a></li>
+				</ul></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Menu Levels"><a
+				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+				href="#collapseMulti" data-parent="#exampleAccordion"> <i
+					class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">Inserting
+						into Tables </span>
+			</a>
+				<ul class="sidenav-second-level collapse" id="collapseMulti">
+					<li><a href="insertion1.jsp">Insertion 1</a></li>
+					<li><a href="insertion2.jsp">Insertion 2</a></li>
+					<li><a href="insertion3.jsp">Insertion 3</a></li>
+				</ul></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Link"><a class="nav-link" href="#"> <i
+					class="fa fa-fw fa-link"></i> <span class="nav-link-text">Link</span>
+			</a></li>
+		</ul>
+		<ul class="navbar-nav sidenav-toggler">
+			<li class="nav-item"><a class="nav-link text-center"
+				id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
+			</a></li>
+		</ul>
+	</div>
 	</nav>
 
 	<div class="content-wrapper">
@@ -110,6 +116,77 @@
 				<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
 				<li class="breadcrumb-item active">Charts</li>
 			</ol>
+			Patterns to display: <br/>
+      Frequents table pattern: <br/>
+      all drinker states should be the same as the bar states<br/>
+      
+      <% 		  
+     try{
+    	//Get the database connection
+			ApplicationDB db = new ApplicationDB();	
+			Connection con = db.getConnection();
+			if (con != null)
+			out.print(" connection made to database! <br/>");
+			else 
+				out.print("connection with the database wasn't made :( <br/>");
+			//Create a SQL statement
+			Statement stmt = con.createStatement();
+			//Make a SELECT query from the table specified by the 'command' parameter at the index.jsp
+			String str = "select count(given_name) as tuples from Frequents where drinker_state<>bar_state; ";
+			//Run the query against the database.
+			out.print("Query being run: "+str+"<br/>");
+			ResultSet result = stmt.executeQuery(str);
+			//Make an HTML table to show the results in:
+				result.next();
+				out.print("result is: "+result.getString("tuples")+"<br/>");
+
+			if (Integer.parseInt(result.getString("tuples"))==0)
+				out.print("there are no tuples where drinker_state is different than the bar_state");
+			else 
+				out.print("there were tuples where the drinker state was different than the bar state ");
+				%>
+      <% 			//close the connection.
+		db.closeConnection(con);
+     }catch (Exception e) {
+			out.print(e);
+			out.print("an error occured");
+		}
+      %>
+      
+      <br/> Bar table pattern: <br/>
+      All bars sell their beers for more than the manufacturing price<br/>
+      <% 		  
+     try{
+    	//Get the database connection
+			ApplicationDB db = new ApplicationDB();	
+			Connection con = db.getConnection();
+			if (con != null)
+			out.print(" connection made to database! <br/>");
+			else 
+				out.print("connection with the database wasn't made :( <br/>");
+			//Create a SQL statement
+			Statement stmt = con.createStatement();
+			//Make a SELECT query from the table specified by the 'command' parameter at the index.jsp
+			String str = "SELECT count(s1.beer_name) as tuples FROM Beer b1, Sells s1 WHERE s1.beer_name=b1.beer_name and s1.price_per_beer<=b1.price_per_beer;";
+			//Run the query against the database.
+			out.print("Query being run: "+str+"<br/>");
+			ResultSet result = stmt.executeQuery(str);
+			//Make an HTML table to show the results in:
+				result.next();
+				out.print("result is: "+result.getString("tuples")+"<br/>");
+
+			if (Integer.parseInt(result.getString("tuples"))==0)
+				out.print("there are no tuples where bar price was less than or equal to manufacture price");
+			else 
+				out.print("there were tuples where tuples where bar price was less than or equal to manufacture price");
+				%>
+      <% 			//close the connection.
+		db.closeConnection(con);
+     }catch (Exception e) {
+			out.print(e);
+			out.print("an error occured");
+		}
+      %>
 		</div>
 		<!-- /.container-fluid-->
 		<!-- /.content-wrapper-->
