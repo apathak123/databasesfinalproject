@@ -8,7 +8,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>SB Admin - Start Bootstrap Template</title>
+<title>BarBeerDrinker+</title>
 <!-- Bootstrap core CSS-->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom fonts for this template-->
@@ -21,86 +21,77 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-		id="mainNav"> <a class="navbar-brand" href="index.jsp">BarBeerDrinker+</a>
-	<button class="navbar-toggler navbar-toggler-right" type="button"
-		data-toggle="collapse" data-target="#navbarResponsive"
-		aria-controls="navbarResponsive" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Dashboard"><a class="nav-link" href="index.jsp"> <i
-					class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Dashboard</span>
-			</a></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Tables"><a class="nav-link" href="tables.jsp"> <i
-					class="fa fa-fw fa-table"></i> <span class="nav-link-text">Tables</span>
-			</a></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Charts"><a class="nav-link" href="charts.jsp"> <i
-					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Charts</span>
-			</a></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Components"><a
-				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-				href="#collapseComponents" data-parent="#exampleAccordion"> <i
-					class="fa fa-fw fa-wrench"></i> <span class="nav-link-text">Components</span>
-			</a>
-				<ul class="sidenav-second-level collapse" id="collapseComponents">
-					<li><a href="navbar.jsp">Navbar</a></li>
-					<li><a href="cards.jsp">Cards</a></li>
-				</ul></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Example Pages"><a
-				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-				href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
-					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Bar
-						Queries</span>
-			</a>
-				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
-					<li><a href="barquery1.jsp">Bar Owner Query 1</a></li>
-					<li><a href="barquery2.jsp">Bar Owner Query 2</a></li>
-					<li><a href="barquery3.jsp">Bar Owner Query 3</a></li>
-					<li><a href="customerquery1.jsp">Customer Query 1</a></li>
-					<li><a href="customerquery2.jsp">Customer Query 2</a></li>
-					<li><a href="customerquery3.jsp">Customer Query 3</a></li>
-				</ul></li>
+		id="mainNav">
+		<a class="navbar-brand" href="index.jsp">BarBeerDrinker+</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Dashboard"><a class="nav-link" href="index.jsp"> <i
+						class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Dashboard</span>
+				</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Tables"><a class="nav-link" href="tables.jsp"> <i
+						class="fa fa-fw fa-table"></i> <span class="nav-link-text">Tables</span>
+				</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Charts"><a class="nav-link" href="charts.jsp"> <i
+						class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Patterns</span>
+				</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Components"><a
+					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+					href="#collapseComponents" data-parent="#exampleAccordion"> <i
+						class="fa fa-fw fa-wrench"></i> <span class="nav-link-text">Components</span>
+				</a>
+					<ul class="sidenav-second-level collapse" id="collapseComponents">
+						<li><a href="navbar.jsp">Navbar</a></li>
+					</ul></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Example Pages"><a
+					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+					href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
+						class="fa fa-fw fa-file"></i> <span class="nav-link-text">Bar
+							Queries</span>
+				</a>
+					<ul class="sidenav-second-level collapse" id="collapseExamplePages">
+						<li><a href="barquery1.jsp">Bar Owner Query 1</a></li>
+						<li><a href="barquery2.jsp">Bar Owner Query 2</a></li>
+						<li><a href="barquery3.jsp">Bar Owner Query 3</a></li>
+						<li><a href="customerquery1.jsp">Customer Query 1</a></li>
+						<li><a href="customerquery2.jsp">Customer Query 2</a></li>
+						<li><a href="customerquery3.jsp">Customer Query 3</a></li>
+					</ul></li>
 
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Example Pages"><a
-				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-				href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
-					class="fa fa-fw fa-file"></i> <span class="nav-link-text">Example
-						Pages</span>
-			</a>
-				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
-					<li><a href="blank.jsp">Blank Page</a></li>
-				</ul></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Menu Levels"><a
-				class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-				href="#collapseMulti" data-parent="#exampleAccordion"> <i
-					class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">Inserting
-						into Tables </span>
-			</a>
-				<ul class="sidenav-second-level collapse" id="collapseMulti">
-					<li><a href="insertion1.jsp">Insertion 1</a></li>
-					<li><a href="insertion2.jsp">Insertion 2</a></li>
-					<li><a href="insertion3.jsp">Insertion 3</a></li>
-				</ul></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Link"><a class="nav-link" href="#"> <i
-					class="fa fa-fw fa-link"></i> <span class="nav-link-text">Link</span>
-			</a></li>
-		</ul>
-		<ul class="navbar-nav sidenav-toggler">
-			<li class="nav-item"><a class="nav-link text-center"
-				id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
-			</a></li>
-		</ul>
-	</div>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Example Pages"><a
+					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+					href="#collapseExamplePages" data-parent="#exampleAccordion"> <i
+						class="fa fa-fw fa-file"></i> <span class="nav-link-text">Example
+							Pages</span>
+				</a>
+					<ul class="sidenav-second-level collapse" id="collapseExamplePages">
+						<li><a href="blank.jsp">Blank Page</a></li>
+					</ul></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Menu Levels"><a
+					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+					href="#collapseMulti" data-parent="#exampleAccordion"> <i
+						class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">Inserting
+							into Tables </span>
+				</a>
+					<ul class="sidenav-second-level collapse" id="collapseMulti">
+						<li><a href="insertion1.jsp">Insertion 1</a></li>
+						<li><a href="insertion2.jsp">Insertion 2</a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</nav>
 	</nav>
 	<div class="content-wrapper">
 		<div class="container-fluid">

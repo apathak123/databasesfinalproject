@@ -44,7 +44,7 @@
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
 				title="Charts"><a class="nav-link" href="charts.jsp"> <i
-					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Charts</span>
+					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Patterns</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
 				title="Components"><a
@@ -54,7 +54,6 @@
 			</a>
 				<ul class="sidenav-second-level collapse" id="collapseComponents">
 					<li><a href="navbar.jsp">Navbar</a></li>
-					<li><a href="cards.jsp">Cards</a></li>
 				</ul></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
 				title="Example Pages"><a
@@ -92,13 +91,7 @@
 				<ul class="sidenav-second-level collapse" id="collapseMulti">
 					<li><a href="insertion1.jsp">Insertion 1</a></li>
 					<li><a href="insertion2.jsp">Insertion 2</a></li>
-					<li><a href="insertion3.jsp">Insertion 3</a></li>
 				</ul></li>
-		</ul>
-		<ul class="navbar-nav sidenav-toggler">
-			<li class="nav-item"><a class="nav-link text-center"
-				id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
-			</a></li>
 		</ul>
 	</div>
 	</nav>
