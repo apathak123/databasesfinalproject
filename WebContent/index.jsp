@@ -102,6 +102,12 @@
 				<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
 				<li class="breadcrumb-item active">My Dashboard</li>
 			</ol>
+			<p>
+				<b><center>Welcome to BarBeerDrinker+</center></b> Disclaimer: As
+				you use this amazing tool, there will be error messages for the
+				Queries and the Inserting Pages because of the dynamic forms that
+				are present. As a result they will be updated and submitted once the
+				forms have been correctly filled.</br> </p>
 		</div>
 		<center>
 			<IMG SRC="beergif.gif">
