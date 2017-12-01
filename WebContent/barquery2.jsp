@@ -99,13 +99,42 @@
 					<!-- added by harsh -->
 
 					<h3>Bar Query 2</h3>
-					Want to know the most profitable beer that you sell?<br /> Enter
-					in the following information (use Rebel Moustache Inn)!<br />
+					We have the data on exactly which drinker frequents which bar.<br>
+					You can utilize it by finding out exactly what beer is most popular with the people that frequent your bar. <br>
+					Using this data, you can adjust the prices to net more profit on popular drinks, or lower prices on less popular drinks to increase popularity. <br>
+					Enter in the following information (use Rebel Moustache Inn)!<br />
 
-					<form name="f5" method="get" action="#">
-						Bar name:<br> <input type="text" name="bar_name"><br>
-						<input type="submit" value="Submit">
-					</form>
+					<form name="f1" method="get" action="#">
+				<select name="bar_name">
+				<option selected="selected">Rebel Moustache Inn</option>
+				<%
+						try {
+							//Get the database connection
+							ApplicationDB db = new ApplicationDB();
+							Connection con = db.getConnection();
+							Statement stmt = con.createStatement();
+								String str = "SELECT bar_name FROM Sells group by bar_name;";
+								ResultSet result = stmt.executeQuery(str);
+					%>
+					<%
+								while (result.next()) {
+									if (result.getString("bar_name").equals("Rebel Moustache Inn"))
+										continue;
+									else
+							%>
+				<option><%out.print(result.getString("bar_name")); %></option>
+				
+				<%}
+					//close the connection.
+						db.closeConnection(con);
+					} catch (Exception e) {
+						out.print(e);
+						out.print("an error occured");
+					}
+				%>
+				
+				</select> <input type="submit" name="submit" value="Select bar" />
+			</form>
 					<%
 						String bar_name = request.getParameter("bar_name");
 						out.print(bar_name);
@@ -117,9 +146,12 @@
 							Connection con = db.getConnection();
 							Statement stmt = con.createStatement();
 							if (bar_name != null) {
-								String str = "SELECT DISTINCT Sells.bar_name, Beer.beer_name,(Sells.price_per_beer - Beer.price_per_beer )as profit FROM Sells,Beer WHERE Sells.bar_name = '"
+								String str = "select Likes.beer_name, count(Likes.beer_name)as num_of_people_that_like_it from Sells, Likes, Frequents where Frequents.bar_name='" 
 										+ bar_name
-										+ "' AND Sells.beer_name = Beer.beer_name ORDER BY profit DESC";
+										+"'and Likes.given_name=Frequents.given_name and Frequents.surname=Likes.surname and "
+										+"Sells.bar_name='"
+										+ bar_name
+										+ "' and Likes.beer_name like concat('%',Sells.beer_name,'%') group by Likes.beer_name";
 								//Run the query against the database.
 								out.print("query being run: <br/>" + str);
 								ResultSet result = stmt.executeQuery(str);
@@ -129,9 +161,8 @@
 						cellspacing="0">
 						<thead>
 							<tr>
-								<td>bar_name</td>
 								<td>beer_name</td>
-								<td>profit</td>
+								<td>num_of_people_that_like_it</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -141,17 +172,12 @@
 							<tr>
 								<td>
 									<%
-										out.print(result.getString("bar_name"));
-									%>
-								</td>
-								<td>
-									<%
 										out.print(result.getString("beer_name"));
 									%>
 								</td>
 								<td>
 									<%
-										out.print(result.getString("profit"));
+										out.print(result.getString("num_of_people_that_like_it"));
 									%>
 								</td>
 							</tr>

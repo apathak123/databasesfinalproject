@@ -95,8 +95,16 @@
 			<div class="row">
 				<div class="col-12">
 					<h3>Query 2</h3>
-					want to see the top 5 ranked bars by reviews in your state that you
-					dont frequent?<br /> enter in the following information!<br />
+					Customers sometimes want to explore and try out places that they normally do not visit. <br>
+					Because of that, we have created a system that gives them the highest ranked bars that they do not currently frequent <br>
+					This way, they are assured the new bars are well reviewed and worthy to explore <br>
+					<br>
+					(Unfortunately, because we have 3 primary keys, a drop down is not viable since the forms get reset every time the page is reloaded. <br>
+					I tested this by making the drop down of all possible first names, having the user select one, then generating all the possible middle names, selecting the middle name, then generating all the possible last names, then finally putting them together. <br>
+					This would not work because after the possible middle names are generated, the first name is reset to null by the page and we could not store it without it being overwritten by null.) <br>
+					<br>
+					want to see the top 5 ranked bars in your state that you
+					dont frequent?<br> enter in the following information!<br />
 					(use joel G Alvarado)<br />
 
 					<p>query might take up to a minute to retrieve after pressing

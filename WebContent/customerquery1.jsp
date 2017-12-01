@@ -95,6 +95,13 @@
 			<div class="row">
 				<div class="col-12">
 					<h3>Query 1</h3>
+					Our website has data on reviews for each bar, Drinkers want to go to the best bars whenever possible, <br>
+					so we have provided you with the 5 highest ranked bars that you frequent.<br>
+					<br>
+					(Unfortunately, because we have 3 primary keys, a drop down is not viable since the forms get reset every time the page is reloaded. <br>
+					I tested this by making the drop down of all possible first names, having the user select one, then generating all the possible middle names, selecting the middle name, then generating all the possible last names, then finally putting them together. <br>
+					This would not work because after the possible middle names are generated, the first name is reset to null by the page and we could not store it without it being overwritten by null.) <br>
+					<br>
 					Want to see the top 5 ranked bars by reviews that you frequent?<br />
 					Enter in the following information(use joel G Alvarado)!<br />
 

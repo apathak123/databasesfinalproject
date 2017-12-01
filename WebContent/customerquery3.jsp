@@ -98,6 +98,15 @@
 			<div class="row">
 				<div class="col-12">
 					<h3>Query 3</h3>
+					Customers want to drink without breaking the bank. Using our data, we can figure out where the drinker frequents, <br>
+					what the bars sell, and what the cheapest alternitive beer will be. <br>
+					This is great when you just want to hang out with your friends without spending a lot of money.
+					<br>
+					<br>
+					(Unfortunately, because we have 3 primary keys, a drop down is not viable since the forms get reset every time the page is reloaded. <br>
+					I tested this by making the drop down of all possible first names, having the user select one, then generating all the possible middle names, selecting the middle name, then generating all the possible last names, then finally putting them together. <br>
+					This would not work because after the possible middle names are generated, the first name is reset to null by the page and we could not store it without it being overwritten by null.) <br>
+					<br>
 					Want to know the cheapest beers from places you frequent?<br />
 					Enter in the following information (use joel G Alvarado)!<br />
 

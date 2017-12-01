@@ -99,13 +99,42 @@
 					<!-- added by harsh -->
 
 					<h3>Bar Query 1</h3>
-					want to know people in your state that dont frequent your bar?<br />
-					enter in the following information!<br /> (use Rebel Moustache Inn)<br />
-
-					<form name="f4" method="get" action="#">
-						Bar name:<br> <input type="text" name="bar_name"><br>
-						<input type="submit" value="Submit">
-					</form>
+					We have a vast database on all the drinkers in america. <br>
+					Using that database, we can provide you with drinkers that don't frequent your bar, but reside in the same state <br>
+					Using this information, you can contact them through email or phone and send special promotions in order to gain new customers<br>
+					You can even use their address to find the closest people and contact them that way<br>
+					Select your bar name!<br>
+				<form name="f1" method="get" action="#">
+				<select name="bar_name">
+				<option selected="selected">Rebel Moustache Inn</option>
+				<%
+						try {
+							//Get the database connection
+							ApplicationDB db = new ApplicationDB();
+							Connection con = db.getConnection();
+							Statement stmt = con.createStatement();
+								String str = "SELECT bar_name FROM Sells group by bar_name;";
+								ResultSet result = stmt.executeQuery(str);
+					%>
+					<%
+								while (result.next()) {
+									if (result.getString("bar_name").equals("Rebel Moustache Inn"))
+										continue;
+									else
+							%>
+				<option><%out.print(result.getString("bar_name")); %></option>
+				
+				<%}
+					//close the connection.
+						db.closeConnection(con);
+					} catch (Exception e) {
+						out.print(e);
+						out.print("an error occured");
+					}
+				%>
+				
+				</select> <input type="submit" name="submit" value="Select bar" />
+			</form>
 					<%
 						String bar_name = request.getParameter("bar_name");
 						out.print(bar_name);

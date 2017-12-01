@@ -95,14 +95,42 @@
 			<div class="row">
 				<div class="col-12">
 					<h3>Bar Query 3</h3>
-					Want to know what the most popular beers you sell are from what the
-					world likes?<br /> Enter in the following information (use Rebel
-					Moustache Inn)!<br />
+					We are able to provide you with data to help improve the bar. <br>
+					the following query can pull up the most popular beers that people like that you do not currently sell. <br>
+					Using the ranked table, you can see exactly which beers you should add to appeal to more people and generate more sales <br>
+					Enter in the following information (use Rebel Moustache Inn)!<br />
 
-					<form name="f6" method="get" action="#">
-						Bar name:<br> <input type="text" name="bar_name"><br>
-						<input type="submit" value="Submit">
-					</form>
+					<form name="f1" method="get" action="#">
+				<select name="bar_name">
+				<option selected="selected">Rebel Moustache Inn</option>
+				<%
+						try {
+							//Get the database connection
+							ApplicationDB db = new ApplicationDB();
+							Connection con = db.getConnection();
+							Statement stmt = con.createStatement();
+								String str = "SELECT bar_name FROM Sells group by bar_name;";
+								ResultSet result = stmt.executeQuery(str);
+					%>
+					<%
+								while (result.next()) {
+									if (result.getString("bar_name").equals("Rebel Moustache Inn"))
+										continue;
+									else
+							%>
+				<option><%out.print(result.getString("bar_name")); %></option>
+				
+				<%}
+					//close the connection.
+						db.closeConnection(con);
+					} catch (Exception e) {
+						out.print(e);
+						out.print("an error occured");
+					}
+				%>
+				
+				</select> <input type="submit" name="submit" value="Select bar" />
+			</form>
 					<%
 						String bar_name = request.getParameter("bar_name");
 						out.print(bar_name);
@@ -114,7 +142,7 @@
 							Connection con = db.getConnection();
 							Statement stmt = con.createStatement();
 							if (bar_name != null) {
-								String str = "select Likes.beer_name, count(Likes.beer_name)as how_many_people_like_the_beer from Likes where exists (select * from Sells where Sells.bar_name='"
+								String str = "select Likes.beer_name, count(Likes.beer_name)as how_many_people_like_the_beer from Likes where not exists (select * from Sells where Sells.bar_name='"
 										+ bar_name
 										+ "' and Likes.beer_name like concat('%',Sells.beer_name,'%')) group by Likes.beer_name order by count(Likes.beer_name) desc";
 								//Run the query against the database.
@@ -127,7 +155,6 @@
 						<thead>
 							<tr>
 								<td>beer_name</td>
-								<td></td>
 								<td>how_many_people_like_the_beer</td>
 							</tr>
 						</thead>
